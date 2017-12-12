@@ -1,3 +1,7 @@
+Proof Of Concept of a [React](https://reactjs.org/) app using [Material-UI](https://material-ui-next.com/) CSS framework.
+
+The intent of this project is just to evaluate the different features/components of both frameworks. Any task related with testing, deploying, UX or any other development practice is out of the scope.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
