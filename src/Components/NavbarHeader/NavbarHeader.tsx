@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AppBar, Toolbar, Typography } from '../../AppMaterialUI';
+import { AppBar, Toolbar, Typography, IconButton, MenuIcon } from '../../AppMaterialUI';
 
 import './NavbarHeader.css';
 
@@ -10,12 +10,16 @@ export interface Props {
 const NavbarHeader = ({ title }: Props ) => (
   <div>
     <AppBar position="static">
-        <Toolbar className="navbar-header-toolbar">
-          <Typography type="title" color="inherit">
-            {title}
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Toolbar className="navbar-header-toolbar">
+        <IconButton color="contrast" aria-label="Menu">
+          <MenuIcon />
+        </IconButton>
+        <Typography type="title" color="inherit">
+          {title}
+        </Typography>
+        <IconButton color="contrast" className="no-visible"/>
+      </Toolbar>
+    </AppBar>
   </div>
 );
 
