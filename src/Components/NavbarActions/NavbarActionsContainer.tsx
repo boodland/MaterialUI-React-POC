@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import NavbarActions from './NavbarActions';
+import NavbarActions, { Props } from './NavbarActions';
 
 interface State {
   open: boolean;
@@ -25,8 +25,13 @@ class NavbarActionsContainer extends React.Component<{}, State> {
   }
 
   render() {
+    const props: Props = {
+      actions: this.actions,
+      open: this.state.open,
+      close: this.close
+    };
     return (
-      <NavbarActions actions={this.actions} open={this.state.open} close={this.close}/>
+      <NavbarActions {...props}/>
     );
   }
 }

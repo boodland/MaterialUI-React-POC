@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton, MenuIcon } from '../../AppMate
 
 import './NavbarHeader.css';
 
-interface Props {
+export interface Props {
   title: string;
 }
 

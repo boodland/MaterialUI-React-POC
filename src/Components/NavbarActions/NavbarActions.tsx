@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText, Icon } from '../../AppMaterialUI';
 
-interface Props {
+export interface Props {
   actions: {title: string, icon: string}[];
   open: boolean;
   close: Function;
