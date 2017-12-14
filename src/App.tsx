@@ -1,15 +1,13 @@
 import * as React from 'react';
 import './App.css';
 
-import NavbarHeaderContainer from './Components/NavbarHeader/NavbarHeaderContainer';
-import NavbarActionsContainer from './Components/NavbarActions/NavbarActionsContainer';
+import NavbarContainer from './Components/Navbar/NavbarContainer';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <NavbarHeaderContainer />
-        <NavbarActionsContainer />
+        <NavbarContainer />
       </div>
     );
   }
