@@ -5,13 +5,19 @@ import './NavbarHeader.css';
 
 export interface Props {
   title: string;
+  open: Function;
 }
 
-const NavbarHeader = ({ title }: Props ) => (
+const NavbarHeader = ({ title, open }: Props ) => (
   <div>
     <AppBar position="static">
       <Toolbar className="navbar-header-toolbar">
-        <IconButton color="contrast" aria-label="Menu" className="navbar-action">
+        <IconButton
+          color="contrast"
+          aria-label="Menu"
+          className="navbar-action"
+          onClick={() => open()}
+        >
           <MenuIcon />
         </IconButton>
         <Typography type="title" color="inherit">

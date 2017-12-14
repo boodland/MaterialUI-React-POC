@@ -1,10 +1,17 @@
 import * as React from 'react';
 
-import NavbarHeader, { Props } from './NavbarHeader';
+import NavbarHeader, { Props as ChildrenProps } from './NavbarHeader';
 
-class NavbarHeaderContainer extends React.Component {
+export interface Props {
+  onNavbarOpen: Function;
+}
+
+class NavbarHeaderContainer extends React.Component<Props, {}> {
   render() {
-    const props: Props = { title: 'Subject Hub' };
+    const props: ChildrenProps = {
+      title: 'Subject Hub',
+      open: this.props.onNavbarOpen
+    };
     return (
       <NavbarHeader {...props} />
     );

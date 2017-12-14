@@ -1,14 +1,36 @@
 import * as React from 'react';
 
-import NavbarHeaderContainer from '../NavbarHeader/NavbarHeaderContainer';
-import NavbarActionsContainer from '../NavbarActions/NavbarActionsContainer';
+import NavbarHeaderContainer, {Props as NavbarHeaderProps } from '../NavbarHeader/NavbarHeaderContainer';
+import NavbarActionsContainer , { Props as NavbarActionsProps } from '../NavbarActions/NavbarActionsContainer';
 
-class NavbarContainer extends React.Component {
+interface State {
+  open: boolean;
+}
+
+class NavbarContainer extends React.Component<{}, State> {
+  constructor(props: {}) {
+    super(props);
+    this.state = { open: true };
+  }
+
+  toggleNavBar = (state: boolean) => {
+    this.setState({ open: state });
+  }
+
   render() {
+    const navbarActionsProps: NavbarActionsProps = {
+        open: this.state.open,
+        onNavbarClose: () => this.toggleNavBar(false)
+    };
+
+    const navbarHeaderProps: NavbarHeaderProps = {
+      onNavbarOpen: () => this.toggleNavBar(true)
+    };
+
     return (
       <div>
-        <NavbarHeaderContainer />
-        <NavbarActionsContainer />
+        <NavbarHeaderContainer {...navbarHeaderProps}/>
+        <NavbarActionsContainer {...navbarActionsProps}/>
       </div>
     );
   }

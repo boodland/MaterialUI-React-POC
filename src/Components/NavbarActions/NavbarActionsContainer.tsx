@@ -1,12 +1,13 @@
 import * as React from 'react';
 
-import NavbarActions, { Props } from './NavbarActions';
+import NavbarActions, { Props as ChildrenProps } from './NavbarActions';
 
-interface State {
+export interface Props {
   open: boolean;
+  onNavbarClose: Function;
 }
 
-class NavbarActionsContainer extends React.Component<{}, State> {
+class NavbarActionsContainer extends React.Component<Props, {}> {
 
   actions = [
     { title: 'Dashboard', icon: 'apps' },
@@ -15,19 +16,14 @@ class NavbarActionsContainer extends React.Component<{}, State> {
     { title: 'Exams', icon: 'edit' }
   ];
 
-  constructor(props: {}) {
-    super(props);
-    this.state = { open: false };
-  }
-
   close = () => {
-    this.setState({ open: false });
+    this.props.onNavbarClose();
   }
 
   render() {
-    const props: Props = {
+    const props: ChildrenProps = {
       actions: this.actions,
-      open: this.state.open,
+      open: this.props.open,
       close: this.close
     };
     return (
