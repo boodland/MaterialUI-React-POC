@@ -10,7 +10,7 @@ interface State {
 class NavbarContainer extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props);
-    this.state = { open: true };
+    this.state = { open: false };
   }
 
   toggleNavBar = (state: boolean) => {
@@ -28,10 +28,10 @@ class NavbarContainer extends React.Component<{}, State> {
     };
 
     return (
-      <div>
+      <React.Fragment>
         <NavbarHeaderContainer {...navbarHeaderProps}/>
         <NavbarActionsContainer {...navbarActionsProps}/>
-      </div>
+      </React.Fragment>
     );
   }
 }
