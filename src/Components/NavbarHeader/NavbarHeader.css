@@ -1,10 +1,15 @@
 .navbar-header-toolbar {
-  margin: 0 auto;
-  max-width: 900px;
-  width: 100%;
   justify-content: space-between;
 }
 
-.no-visible{
-  visibility: hidden;
+.navbar-action{
+  width: 48px;
+}
+
+@media (min-width: 950px){
+  .navbar-header-toolbar {
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+  }
 }

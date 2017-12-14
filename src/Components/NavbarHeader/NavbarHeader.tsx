@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton, MenuIcon } from '../../AppMate
 
 import './NavbarHeader.css';
 
-export interface Props {
+interface Props {
   title: string;
 }
 
@@ -11,13 +11,13 @@ const NavbarHeader = ({ title }: Props ) => (
   <div>
     <AppBar position="static">
       <Toolbar className="navbar-header-toolbar">
-        <IconButton color="contrast" aria-label="Menu">
+        <IconButton color="contrast" aria-label="Menu" className="navbar-action">
           <MenuIcon />
         </IconButton>
         <Typography type="title" color="inherit">
           {title}
         </Typography>
-        <IconButton color="contrast" className="no-visible"/>
+        <div className="navbar-action"/>
       </Toolbar>
     </AppBar>
   </div>
