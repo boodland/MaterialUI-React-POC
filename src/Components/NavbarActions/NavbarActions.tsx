@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText, Icon } from '../../AppMaterialUI';
 
-export interface Props {
-  actions: {title: string, icon: string}[];
+export type StateToProps = {
+  actions: { title: string, icon: string }[];
   open: boolean;
-  close: Function;
-}
+};
 
-const NavbarActions = ({ actions, open, close }: Props) => {
+export type DispatchToProps = {
+  onNavbarClose: Function;
+};
+
+const NavbarActions = ({ actions, open, onNavbarClose }: StateToProps & DispatchToProps) => {
   const listActions = actions.map((action, id) => (
     <ListItem key={id} button={true}>
       <ListItemIcon>
@@ -18,11 +21,11 @@ const NavbarActions = ({ actions, open, close }: Props) => {
     )
   );
   return (
-    <Drawer open={open} onRequestClose={() => close()}>
+    <Drawer open={open} onRequestClose={() => onNavbarClose()}>
       <div
         role="button"
-        onClick={() => close()}
-        onKeyDown={() => close()}
+        onClick={() => onNavbarClose()}
+        onKeyDown={() => onNavbarClose()}
       >
         <List>
           {listActions}
