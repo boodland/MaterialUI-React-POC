@@ -1,1 +1,6 @@
-
+@media (min-width: 950px){
+  .app-main-container {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+}
