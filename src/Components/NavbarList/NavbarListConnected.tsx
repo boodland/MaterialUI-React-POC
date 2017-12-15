@@ -6,7 +6,7 @@ import { closeNavbarAction } from '../Navbar/NavbarReducer';
 import NavbarList, { StateToProps, DispatchToProps } from './NavbarList';
 
 const mapStateToProps = (state: boolean): StateToProps => ({
-  actions : [
+  options : [
     { title: 'Dashboard', icon: 'apps' },
     { title: 'Subjects', icon: 'school' },
     { title: 'Tutors', icon: 'person' },

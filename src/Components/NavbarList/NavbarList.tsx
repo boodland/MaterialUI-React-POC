@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText, Icon } from '../../AppMaterialUI';
 
 export type StateToProps = {
-  actions: { title: string, icon: string }[];
+  options: { title: string, icon: string }[];
   open: boolean;
 };
 
@@ -10,13 +10,13 @@ export type DispatchToProps = {
   onNavbarClose: Function;
 };
 
-const NavbarList = ({ actions, open, onNavbarClose }: StateToProps & DispatchToProps) => {
-  const listActions = actions.map((action, id) => (
+const NavbarList = ({ options, open, onNavbarClose }: StateToProps & DispatchToProps) => {
+  const listActions = options.map((option, id) => (
     <ListItem key={id} button={true}>
       <ListItemIcon>
-        <Icon>{action.icon}</Icon>
+        <Icon>{option.icon}</Icon>
       </ListItemIcon>
-      <ListItemText primary={action.title} />
+      <ListItemText primary={option.title} />
     </ListItem>
     )
   );
