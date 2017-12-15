@@ -6,6 +6,9 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Drawer from 'material-ui/Drawer';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Icon from 'material-ui/Icon';
+import Card, { CardHeader, CardContent } from 'material-ui/Card';
+import Button from 'material-ui/Button';
+import Chip from 'material-ui/Chip';
 
 export {
   AppBar,
@@ -15,5 +18,8 @@ export {
   MenuIcon,
   Drawer,
   List, ListItem, ListItemIcon, ListItemText,
-  Icon
+  Icon,
+  Card, CardHeader, CardContent,
+  Button,
+  Chip
 };
