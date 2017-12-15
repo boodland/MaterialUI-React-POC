@@ -1,6 +1,11 @@
-@media (min-width: 950px){
+.app-main-container {
+  margin: 0 auto;
+  max-width: 900px;
+  margin-top: 64px;
+}
+
+@media (max-width: 600px){
   .app-main-container {
-    margin: 0 auto;
-    max-width: 900px;
+    margin-top: 56px;
   }
 }
