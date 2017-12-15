@@ -7,10 +7,10 @@ import NavbarList, { StateToProps, DispatchToProps } from './NavbarList';
 
 const mapStateToProps = (state: boolean): StateToProps => ({
   options : [
-    { title: 'Dashboard', icon: 'apps' },
-    { title: 'Subjects', icon: 'school' },
-    { title: 'Tutors', icon: 'person' },
-    { title: 'Exams', icon: 'edit' }
+    { title: 'Dashboard', link: '/dashboard', icon: 'apps' },
+    { title: 'Subjects', link: '/subjects', icon: 'school' },
+    { title: 'Tutors', link: '/tutors', icon: 'person' },
+    { title: 'Exams', link: '/exams', icon: 'edit' }
   ],
   open: state
 });
