@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Card, CardHeader, Icon, CardContent, Button, Chip } from '../../AppMaterialUI';
 
-import './Dashboard.css';
+import './DashboardItem.css';
 
-export type DashboardItem = {
+export type DashboardItemProps = {
   subjectId: number;
   title: string;
   assessmentDate: Date;
@@ -13,24 +13,20 @@ export type DashboardItem = {
   image: string;
 };
 
-export type DashboardProps = {
-  dashboardItem: DashboardItem;
-};
-
-const Dashboard = ({dashboardItem}: DashboardProps) => {
+const DashboardItem = ({title, assessmentDate, numOfSeats, numOfTutors, numOfExams, image}: DashboardItemProps) => {
 
   const cardHeader = (
     <CardHeader
       className="card-header"
       title={
         <span className="card-title">
-          {dashboardItem.title}
+          {title}
         </span>
       }
       subheader={
         <React.Fragment>
           <Icon className="card-icon">event</Icon>
-          <span className="card-subtitle">{dashboardItem.assessmentDate.toDateString()}</span>
+          <span className="card-subtitle">{assessmentDate.toDateString()}</span>
         </React.Fragment>
       }
     />
@@ -39,9 +35,9 @@ const Dashboard = ({dashboardItem}: DashboardProps) => {
   const cardContent = (
     <CardContent
       className="card-content"
-      style={{ backgroundImage: 'url(' + process.env.PUBLIC_URL + '/images/' + dashboardItem.image + '.jpg)' }}
+      style={{ backgroundImage: 'url(' + process.env.PUBLIC_URL + '/images/' + image + '.jpg)' }}
     >
-      <div>{dashboardItem.numOfSeats} Seats</div>
+      <div>{numOfSeats} Seats</div>
       <Button raised={true} color="default">View Subject</Button>
     </CardContent>
   );
@@ -50,11 +46,11 @@ const Dashboard = ({dashboardItem}: DashboardProps) => {
     <div className="flex-container">
       <Chip
         className="chip-exams"
-        label={dashboardItem.numOfExams + ' Exams'}
+        label={numOfExams + ' Exams'}
       />
       <Chip
         className="chip-tutors"
-        label={dashboardItem.numOfTutors + ' Tutors'}
+        label={numOfTutors + ' Tutors'}
       />
     </div>
   );
@@ -68,4 +64,4 @@ const Dashboard = ({dashboardItem}: DashboardProps) => {
   );
 };
 
-export default Dashboard;
+export default DashboardItem;

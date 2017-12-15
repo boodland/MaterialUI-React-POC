@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import Dashboard, { DashboardItem } from './Dashboard';
+import DashboardItem, { DashboardItemProps } from './DashboardItem';
 
-class DashboardContainer extends React.Component {
+class DashboardListContainer extends React.Component {
 
-  dashboardListData: DashboardItem[] = [
+  dashboardListData: DashboardItemProps[] = [
       {
         subjectId: 1, title: 'History', assessmentDate: new Date(2018, 4),
         numOfSeats: 680, numOfTutors: 345, numOfExams: 390, image: 'history'
@@ -40,10 +40,10 @@ class DashboardContainer extends React.Component {
   ];
 
   render() {
-    const dashboardList = this.dashboardListData.map((dashboardItem: DashboardItem) => (
-      <Dashboard
+    const dashboardList = this.dashboardListData.map((dashboardItem: DashboardItemProps) => (
+      <DashboardItem
         key={dashboardItem.subjectId}
-        dashboardItem={dashboardItem}
+        {...dashboardItem}
       />
       )
     );
@@ -56,4 +56,4 @@ class DashboardContainer extends React.Component {
   }
 }
 
-export default DashboardContainer;
+export default DashboardListContainer;
