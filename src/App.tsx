@@ -6,7 +6,7 @@ import './App.css';
 import configureStore from './AppConfigureStore';
 
 import Navbar from './Components/Navbar/Navbar';
-import DashboardListContainer from './Components/DashboardList/DashboardListContainer';
+import Routes from './AppRoutes';
 
 const store = configureStore();
 
@@ -15,7 +15,7 @@ const App = () => (
     <React.Fragment>
       <Navbar />
       <main className="app-main-container">
-        <DashboardListContainer />
+        <Routes />
       </main>
     </React.Fragment>
   </Provider>
