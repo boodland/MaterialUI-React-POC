@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { closeNavbarAction } from '../Navbar/NavbarReducer';
 
-import NavbarActions, { StateToProps, DispatchToProps } from './NavbarActions';
+import NavbarList, { StateToProps, DispatchToProps } from './NavbarList';
 
 const mapStateToProps = (state: boolean): StateToProps => ({
   actions : [
@@ -19,9 +19,9 @@ const mapDispatchToProps = (dispatch: Dispatch<boolean>): DispatchToProps => ({
   onNavbarClose: () => dispatch(closeNavbarAction())
 });
 
-const NavbarActionsConnected = connect<StateToProps, DispatchToProps>(
+const NavbarListConnected = connect<StateToProps, DispatchToProps>(
   mapStateToProps,
   mapDispatchToProps
-)(NavbarActions);
+)(NavbarList);
 
-export default NavbarActionsConnected;
+export default NavbarListConnected;

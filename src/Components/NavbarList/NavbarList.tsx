@@ -10,7 +10,7 @@ export type DispatchToProps = {
   onNavbarClose: Function;
 };
 
-const NavbarActions = ({ actions, open, onNavbarClose }: StateToProps & DispatchToProps) => {
+const NavbarList = ({ actions, open, onNavbarClose }: StateToProps & DispatchToProps) => {
   const listActions = actions.map((action, id) => (
     <ListItem key={id} button={true}>
       <ListItemIcon>
@@ -35,4 +35,4 @@ const NavbarActions = ({ actions, open, onNavbarClose }: StateToProps & Dispatch
   );
 };
 
-export default NavbarActions;
+export default NavbarList;

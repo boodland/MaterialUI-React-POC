@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import NavbarHeaderConnected from '../NavbarHeader/NavbarHeaderConnected';
-import NavbarActionsConnected  from '../NavbarActions/NavbarActionsConnected';
+import NavbarListConnected  from '../NavbarList/NavbarListConnected';
 
 const Navbar = () => (
   <React.Fragment>
     <NavbarHeaderConnected />
-    <NavbarActionsConnected />
+    <NavbarListConnected />
   </React.Fragment>
 );
 
