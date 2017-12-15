@@ -1,14 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 
-import navbarReducer from './Components/Navbar/NavbarReducer';
+import configureStore from './AppConfigureStore';
 
 import App from './App';
 import './index.css';
 
-let store = createStore(navbarReducer);
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
