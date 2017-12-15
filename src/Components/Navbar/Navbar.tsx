@@ -3,11 +3,11 @@ import * as React from 'react';
 import NavbarHeaderConnected from '../NavbarHeader/NavbarHeaderConnected';
 import NavbarActionsConnected  from '../NavbarActions/NavbarActionsConnected';
 
-const NavbarContainer = () => (
+const Navbar = () => (
   <React.Fragment>
     <NavbarHeaderConnected />
     <NavbarActionsConnected />
   </React.Fragment>
 );
 
-export default NavbarContainer;
+export default Navbar;
