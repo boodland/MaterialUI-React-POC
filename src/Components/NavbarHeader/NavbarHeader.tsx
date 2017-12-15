@@ -3,12 +3,15 @@ import { AppBar, Toolbar, Typography, IconButton, MenuIcon } from '../../AppMate
 
 import './NavbarHeader.css';
 
-export interface Props {
+export type StateToProps = {
   title: string;
-  open: Function;
-}
+};
 
-const NavbarHeader = ({ title, open }: Props ) => (
+export type DispatchToProps = {
+  onNavbarOpen: Function;
+};
+
+const NavbarHeader = ({ title, onNavbarOpen }: StateToProps & DispatchToProps ) => (
   <div>
     <AppBar position="static">
       <Toolbar className="navbar-header-toolbar">
@@ -16,7 +19,7 @@ const NavbarHeader = ({ title, open }: Props ) => (
           color="contrast"
           aria-label="Menu"
           className="navbar-action"
-          onClick={() => open()}
+          onClick={() => onNavbarOpen()}
         >
           <MenuIcon />
         </IconButton>
