@@ -13,7 +13,7 @@ export type DispatchToProps = {
 
 const NavbarHeader = ({ title, onNavbarOpen }: StateToProps & DispatchToProps ) => (
   <div>
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Toolbar className="navbar-header-toolbar">
         <IconButton
           color="contrast"
