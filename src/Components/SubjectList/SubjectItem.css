@@ -47,3 +47,14 @@ div.subject-avatar {
 .subject-seats-number {
   font-size: 30px;
 }
+
+li.subject-item {
+  width: 100%;
+  padding: 0 16px;
+}
+
+@media (min-width: 851px) {
+  .subject-item {
+    max-width: 420px;
+  }
+}
