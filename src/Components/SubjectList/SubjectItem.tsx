@@ -21,10 +21,10 @@ const SubjectItem = ({title, assessmentDate, numOfSeats, image, type, color}: Su
       className="subject-title"
       primary={title}
       secondary={
-        <React.Fragment>
+        <span className="subject-subtitle">
           <Icon className="subject-icon">event</Icon>
-          <span className="subject-subtitle">{assessmentDate.toDateString()}</span>
-        </React.Fragment>
+          <span className="subject-date">{assessmentDate.toDateString()}</span>
+        </span>
       }
     />
     <div className="subject-seats">

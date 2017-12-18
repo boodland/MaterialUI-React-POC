@@ -4,9 +4,25 @@ div.subject-avatar {
   width: 80px;
 }
 
+.subject-title{
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
 .subject-title h3 {
   font-weight: bold;
   font-size: 21px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subject-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  box-sizing: border-box;
 }
 
 .subject-icon {
@@ -16,7 +32,7 @@ div.subject-avatar {
   vertical-align: middle;
 }
 
-.subject-subtitle {
+.subject-date {
   vertical-align: text-top;
 }
 
@@ -50,11 +66,11 @@ div.subject-avatar {
 
 li.subject-item {
   width: 100%;
-  padding: 0 16px;
+  padding: 0;
 }
 
 @media (min-width: 851px) {
-  .subject-item {
+  li.subject-item {
     max-width: 420px;
   }
 }
