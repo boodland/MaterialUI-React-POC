@@ -1,0 +1,49 @@
+div.subject-avatar {
+  border-radius: 0;
+  height: 60px;
+  width: 80px;
+}
+
+.subject-title h3 {
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.subject-icon {
+  width:auto;
+  height: auto;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.subject-subtitle {
+  vertical-align: text-top;
+}
+
+.subject-type {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: white;
+  width: 42px;
+  padding: 5px;
+}
+
+.subject-type-name {
+  font-size: 30px;
+}
+
+.subject-seats {
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  color: white;
+  background-color: grey;
+  width: 50px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.subject-seats-number {
+  font-size: 30px;
+}

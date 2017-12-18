@@ -9,6 +9,7 @@ import Icon from 'material-ui/Icon';
 import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
 
 export {
   AppBar,
@@ -21,5 +22,6 @@ export {
   Icon,
   Card, CardHeader, CardContent,
   Button,
-  Chip
+  Chip,
+  Avatar
 };
