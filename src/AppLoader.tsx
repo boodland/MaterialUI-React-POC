@@ -22,6 +22,6 @@ function AppLoadable(loader: LoaderType, defaultOptions: CommonOptions = appLoad
   return Loadable(options);
 }
 
-const SubjectListContainerImport = () => import('./Components/SubjectList/SubjectListContainer');
+const SubjectsImport = () => import('./Components/Subjects/Subjects');
 
-export const LoadableSubjectListContainer = AppLoadable(SubjectListContainerImport);
+export const LoadableSubjects = AppLoadable(SubjectsImport);

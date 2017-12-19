@@ -3,13 +3,13 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import DashboardListContainer from './Components/DashboardList/DashboardListContainer';
 
-import { LoadableSubjectListContainer } from './AppLoader';
+import { LoadableSubjects } from './AppLoader';
 
 const Routes = () => (
   <Switch>
     <Redirect path="/" exact={true} to="/dashboard"/>
     <Route path="/dashboard" component={DashboardListContainer} />
-    <Route path="/subjects" component={LoadableSubjectListContainer} />
+    <Route path="/subjects" component={LoadableSubjects} />
     <Redirect to="/dashboard"/>
   </Switch>
 );
