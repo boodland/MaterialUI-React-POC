@@ -10,6 +10,10 @@ import Button from 'material-ui/Button';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
 import { LinearProgress } from 'material-ui/Progress';
+import TextField from 'material-ui/TextField';
+import MenuItem from 'material-ui/Menu/MenuItem';
+import Input, { InputLabel, InputAdornment } from 'material-ui/Input';
+import { FormControl } from 'material-ui/Form';
 
 export {
   AppBar,
@@ -23,5 +27,9 @@ export {
   Button,
   Chip,
   Avatar,
-  LinearProgress
+  LinearProgress,
+  TextField,
+  MenuItem,
+  Input, InputLabel, InputAdornment,
+  FormControl
 };
