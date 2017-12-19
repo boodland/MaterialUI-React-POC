@@ -9,6 +9,7 @@ import Card, { CardHeader, CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Chip from 'material-ui/Chip';
 import Avatar from 'material-ui/Avatar';
+import { LinearProgress } from 'material-ui/Progress';
 
 export {
   AppBar,
@@ -21,5 +22,6 @@ export {
   Card, CardHeader, CardContent,
   Button,
   Chip,
-  Avatar
+  Avatar,
+  LinearProgress
 };
