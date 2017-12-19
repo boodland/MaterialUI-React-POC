@@ -1,27 +1,29 @@
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-import { closeNavbarAction } from '../Navbar/NavbarReducer';
+import { AppState } from '../../AppConfigureStore';
+import { NavbarState, closeNavbarAction } from '../Navbar/NavbarReducer';
 
 import NavbarList, { StateToProps, DispatchToProps } from './NavbarList';
 
-const mapStateToProps = (state: boolean): StateToProps => ({
+const mapStateToProps = ({navbarReducer}: AppState): StateToProps => ({
   options : [
     { title: 'Dashboard', link: '/dashboard', icon: 'apps' },
     { title: 'Subjects', link: '/subjects', icon: 'school' },
     { title: 'Tutors', link: '/tutors', icon: 'person' },
     { title: 'Exams', link: '/exams', icon: 'edit' }
   ],
-  open: state
+  open: navbarReducer.open
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<boolean>): DispatchToProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<NavbarState>): DispatchToProps => ({
   onNavbarClose: () => dispatch(closeNavbarAction())
 });
 
-const NavbarListConnected = connect<StateToProps, DispatchToProps>(
+const NavbarListConnected = withRouter(connect<StateToProps, DispatchToProps>(
   mapStateToProps,
   mapDispatchToProps
-)(NavbarList);
+)(NavbarList));
 
 export default NavbarListConnected;

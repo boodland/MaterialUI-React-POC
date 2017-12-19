@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { withRouter } from 'react-router';
 
-import { openNavbarAction } from '../Navbar/NavbarReducer';
+import { NavbarState, openNavbarAction } from '../Navbar/NavbarReducer';
 
 import NavbarHeader, { StateToProps, DispatchToProps } from './NavbarHeader';
 
@@ -15,7 +15,7 @@ const mapStateToProps = (): StateToProps => ({
   dashboardPath: DASHBOARD_PATH
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<boolean>): DispatchToProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<NavbarState>): DispatchToProps => ({
   onNavbarOpen: () => dispatch(openNavbarAction()),
   onNavbarGoBack: () => history.back()
 });

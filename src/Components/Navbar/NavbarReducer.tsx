@@ -9,12 +9,18 @@ export const closeNavbarAction = () => (
   { type: CLOSE_NAVBAR }
 );
 
-const navbarReducer = (state = false, action: { type: string }) => {
+export type NavbarState = {
+  open: boolean;
+};
+
+const initialState = { open: false };
+
+const navbarReducer = (state = initialState, action: { type: string }) => {
   switch (action.type) {
     case OPEN_NAVBAR:
-      return true;
+      return {open: true};
     case CLOSE_NAVBAR:
-      return false;
+      return {open: false};
     default:
       return state;
   }
