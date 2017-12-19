@@ -51,7 +51,7 @@ class SubjectListContainer extends React.Component {
     );
 
     return (
-      <List className="flex-container">
+      <List className="flex-container" style={{ margin: '0 16px'}}>
         {subjectList}
       </List>
     );
