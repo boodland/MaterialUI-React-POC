@@ -1,0 +1,17 @@
+form.flex-container {
+  padding: 10px 2px;
+  flex-wrap: nowrap;
+}
+
+.search-title, .search-type{
+  flex-grow: 1;
+}
+
+.search-type{
+  margin: 0 5px;
+  width: 90px;
+}
+
+.search-icon{
+  font-size: 50px;
+}
