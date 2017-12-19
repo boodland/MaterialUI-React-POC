@@ -1,8 +1,19 @@
-import { createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
-import navbarReducer from './Components/Navbar/NavbarReducer';
+import navbarReducer, { NavbarState } from './Components/Navbar/NavbarReducer';
+import subjectsReducer, { SubjectsSearchState } from './Components/Subjects/SubjectsReducer';
 
-let store = createStore(navbarReducer);
+export type AppState = {
+  navbarReducer: NavbarState;
+  subjectsReducer: SubjectsSearchState;
+};
+
+const AppReducer = combineReducers({
+  navbarReducer,
+  subjectsReducer
+});
+
+let store = createStore(AppReducer);
 
 const configureStore = () => {
   return store;
