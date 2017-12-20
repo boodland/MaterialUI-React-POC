@@ -2,17 +2,17 @@ import * as React from 'react';
 
 import { List } from '../../AppMaterialUI';
 
-import SubjectItem, { SubjectItemProps } from '../SubjectItem/SubjectItem';
+import SubjectListItem, { SubjectListItemProps } from '../SubjectListItem/SubjectListItem';
 
 export type StateToProps = {
-  subjects: SubjectItemProps[];
+  subjects: SubjectListItemProps[];
   subjectSearchTitle: string;
   subjectSearchType: string;
 };
 
 const SubjectList = ({ subjects, subjectSearchTitle, subjectSearchType }: StateToProps) => {
-  const subjectList = subjects.map((subjectItem: SubjectItemProps) => (
-    <SubjectItem
+  const subjectList = subjects.map((subjectItem: SubjectListItemProps) => (
+    <SubjectListItem
       key={subjectItem.subjectId}
       {...subjectItem}
     />

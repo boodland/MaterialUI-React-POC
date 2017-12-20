@@ -4,9 +4,9 @@ import { ListItem, Avatar, Icon, Typography } from '../../AppMaterialUI';
 
 import HighlightSearchTermConnected from '../HighlightSearchTerm/HighlightSearchTermConnected';
 
-import './SubjectItem.css';
+import './SubjectListItem.css';
 
-export type SubjectItemProps = {
+export type SubjectListItemProps = {
   subjectId: number;
   title: string;
   assessmentDate: Date;
@@ -16,7 +16,7 @@ export type SubjectItemProps = {
   image: string;
 };
 
-const SubjectItem = ({title, assessmentDate, numOfSeats, image, type, color}: SubjectItemProps) => (
+const SubjectListItem = ({title, assessmentDate, numOfSeats, image, type, color}: SubjectListItemProps) => (
   <ListItem button={true} className="subject-item">
     <Avatar className="subject-avatar" src={process.env.PUBLIC_URL + '/images/' + image + '.jpg'}/>
     <div className="subject-text">
@@ -39,4 +39,4 @@ const SubjectItem = ({title, assessmentDate, numOfSeats, image, type, color}: Su
   </ListItem>
 );
 
-export default SubjectItem;
+export default SubjectListItem;
