@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import { AppState } from '../../AppConfigureStore';
 
+import { SubjectItemProps } from '../SubjectItem/SubjectItem';
 import SubjectList, { StateToProps } from './SubjectList';
 
 const subjectListData: StateToProps['subjects'] = [
@@ -40,8 +41,19 @@ const subjectListData: StateToProps['subjects'] = [
   }
 ];
 
+const filterSubjectBy = (subject: SubjectItemProps, title: string, typeValue: string): boolean => {
+  let isValid = !title || subject.title.toLowerCase().includes(title.toLowerCase());
+
+  isValid = isValid &&
+    (!typeValue || subject.type === typeValue);
+
+  return isValid;
+};
+
 const mapStateToProps = ({subjectsReducer}: AppState): StateToProps => ({
-  subjects: subjectListData,
+  subjects: subjectListData.filter(
+    subject => filterSubjectBy(subject, subjectsReducer.subjectTitle, subjectsReducer.subjectType)
+  ),
   subjectSearchTitle: subjectsReducer.subjectTitle,
   subjectSearchType: subjectsReducer.subjectType
 });
