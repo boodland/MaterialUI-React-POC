@@ -26,7 +26,7 @@ const subjectsReducer = (state = initialState, action: { type: string, searchTer
   switch (action.type) {
     case CHANGE_SUBJECT_TITLE:
       return { ...state, subjectTitle: action.searchTerm };
-    case CHANGE_SUBJECT_TITLE:
+    case CHANGE_SUBJECT_TYPE:
       return { ...state, subjectType: action.searchTerm };
     default:
       return state;
