@@ -52,13 +52,17 @@ div.subject-avatar {
   font-size: 30px;
 }
 
-li.subject-item {
+.subject-item {
   width: 100%;
-  padding: 0;
+}
+
+.subject-item li{
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 @media (min-width: 851px) {
-  li.subject-item {
+  .subject-item {
     max-width: 420px;
   }
 }

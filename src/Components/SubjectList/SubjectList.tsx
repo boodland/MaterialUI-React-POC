@@ -20,7 +20,7 @@ const SubjectList = ({ subjects, subjectSearchTitle, subjectSearchType }: StateT
   );
 
   return (
-    <List className="flex-container" style={{ margin: '0 16px' }}>
+    <List className="flex-container">
       {subjectList}
     </List>
   );
