@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Card, CardHeader, Icon, CardContent, Button, Chip } from '../../AppMaterialUI';
 
 import './DashboardItem.css';
+import { Link } from 'react-router-dom';
 
 export type DashboardItemProps = {
   subjectId: number;
@@ -13,7 +14,8 @@ export type DashboardItemProps = {
   image: string;
 };
 
-const DashboardItem = ({title, assessmentDate, numOfSeats, numOfTutors, numOfExams, image}: DashboardItemProps) => {
+const DashboardItem = (
+  { subjectId, title, assessmentDate, numOfSeats, numOfTutors, numOfExams, image }: DashboardItemProps) => {
 
   const cardHeader = (
     <CardHeader
@@ -38,7 +40,9 @@ const DashboardItem = ({title, assessmentDate, numOfSeats, numOfTutors, numOfExa
       style={{ backgroundImage: 'url(' + process.env.PUBLIC_URL + '/images/' + image + '.jpg)' }}
     >
       <div>{numOfSeats} Seats</div>
-      <Button raised={true} color="default">View Subject</Button>
+      <Link to={`/subjects/${subjectId}`} style={{ textDecoration: 'none' }}>
+        <Button raised={true} color="default">View Subject</Button>
+      </Link>
     </CardContent>
   );
 
