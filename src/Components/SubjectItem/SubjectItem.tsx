@@ -2,6 +2,8 @@ import * as React from 'react';
 
 import { ListItem, Avatar, Icon, Typography } from '../../AppMaterialUI';
 
+import HighlightSearchTermConnected from '../HighlightSearchTerm/HighlightSearchTermConnected';
+
 import './SubjectItem.css';
 
 export type SubjectItemProps = {
@@ -19,7 +21,7 @@ const SubjectItem = ({title, assessmentDate, numOfSeats, image, type, color}: Su
     <Avatar className="subject-avatar" src={process.env.PUBLIC_URL + '/images/' + image + '.jpg'}/>
     <div className="subject-text">
       <Typography type="title" noWrap={true} className="subject-title">
-          {title}
+          <HighlightSearchTermConnected text={title} />
       </Typography>
       <Typography type="subheading" noWrap={true}>
         <Icon className="subject-icon">event</Icon>
