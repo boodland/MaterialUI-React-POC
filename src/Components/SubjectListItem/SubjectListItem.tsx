@@ -19,7 +19,7 @@ export type SubjectListItemProps = {
 
 const SubjectListItem = (
   { subjectId, title, assessmentDate, numOfSeats, image, type, color }: SubjectListItemProps) => (
-    <Link to={`/subjects/${subjectId}`} style={{ textDecoration: 'none' }} className="subject-item">
+  <Link to={`/subjects/${subjectId}`} style={{ textDecoration: 'none' }} className="subject-item">
     <ListItem button={true}>
       <Avatar className="subject-avatar" src={process.env.PUBLIC_URL + '/images/' + image + '.jpg'}/>
       <div className="subject-text">
