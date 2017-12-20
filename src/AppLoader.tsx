@@ -13,7 +13,7 @@ const appLoadableOptions: CommonOptions = {
   delay: 200
 };
 
-function AppLoadable(loader: LoaderType, defaultOptions: CommonOptions = appLoadableOptions) {
+export function AppLoadable(loader: LoaderType, defaultOptions: CommonOptions = appLoadableOptions) {
   const options: OptionsWithoutRender<{}> = {
     ...defaultOptions,
     loader: loader
@@ -21,7 +21,3 @@ function AppLoadable(loader: LoaderType, defaultOptions: CommonOptions = appLoad
 
   return Loadable(options);
 }
-
-const SubjectsImport = () => import('./Components/Subjects/Subjects');
-
-export const LoadableSubjects = AppLoadable(SubjectsImport);
