@@ -14,6 +14,7 @@ import TextField from 'material-ui/TextField';
 import MenuItem from 'material-ui/Menu/MenuItem';
 import Input, { InputLabel, InputAdornment } from 'material-ui/Input';
 import { FormControl } from 'material-ui/Form';
+import ExpansionPanel, { ExpansionPanelDetails, ExpansionPanelSummary } from 'material-ui/ExpansionPanel';
 
 export {
   AppBar,
@@ -31,5 +32,6 @@ export {
   TextField,
   MenuItem,
   Input, InputLabel, InputAdornment,
-  FormControl
+  FormControl,
+  ExpansionPanel, ExpansionPanelDetails, ExpansionPanelSummary
 };
