@@ -1,9 +1,13 @@
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { AppState } from '../../AppConfigureStore';
+import {
+  SubjectsSearchState, changeSubjectTitleAction, changeSubjectTypeAction
+} from '../Subjects/SubjectsReducer';
 
-import SubjectSearch, { StateToProps } from './SubjectSearch';
+import SubjectSearch, { StateToProps, DispatchToProps } from './SubjectSearch';
 
 const typeList: StateToProps['typeList'] = [
   { text: 'None', value: '' },
@@ -19,8 +23,14 @@ const mapStateToProps = ({subjectsReducer}: AppState): StateToProps => ({
   subjectSearchType: subjectsReducer.subjectType
 });
 
-const SubjectSearchConnected = withRouter(connect<StateToProps, {}>(
-  mapStateToProps
+const mapDispatchToProps = (dispatch: Dispatch<SubjectsSearchState>): DispatchToProps => ({
+  onChangeSubjectTitle: (title: string) => dispatch(changeSubjectTitleAction(title)),
+  onChangeSubjectType: (type: string) => dispatch(changeSubjectTypeAction(type))
+});
+
+const SubjectSearchConnected = withRouter(connect<StateToProps, DispatchToProps>(
+  mapStateToProps,
+  mapDispatchToProps
 )(SubjectSearch));
 
 export default SubjectSearchConnected;

@@ -12,7 +12,15 @@ export type StateToProps = {
   subjectSearchType: string;
 };
 
-const SubjectSearch = ({typeList, subjectSearchTitle, subjectSearchType }: StateToProps) => (
+export type DispatchToProps = {
+  onChangeSubjectTitle: (title: string) => void;
+  onChangeSubjectType: (type: string) => void;
+};
+
+const SubjectSearch = (
+  { typeList, subjectSearchTitle, subjectSearchType, onChangeSubjectTitle, onChangeSubjectType }:
+    StateToProps & DispatchToProps
+) => (
   <form noValidate={true} className="flex-container">
     <FormControl className="search-title">
       <InputLabel htmlFor="Title">Title</InputLabel>
@@ -20,10 +28,11 @@ const SubjectSearch = ({typeList, subjectSearchTitle, subjectSearchType }: State
         id="title"
         type="text"
         value={subjectSearchTitle}
+        onChange={(event) => onChangeSubjectTitle(event.target.value)}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
-              // onClick={}
+              onClick={() => onChangeSubjectTitle('')}
             >
               close
             </IconButton>
@@ -33,13 +42,14 @@ const SubjectSearch = ({typeList, subjectSearchTitle, subjectSearchType }: State
     </FormControl>
     <TextField
       className="search-type"
-      id="select-currency"
+      id="select-type"
       select={true}
       label="Type"
       value={subjectSearchType}
+      onChange={(event) => onChangeSubjectType(event.target.value)}
     >
-      {typeList.map((typeItem, index) => (
-        <MenuItem key={index} value={typeItem.value}>
+      {typeList.map(typeItem => (
+        <MenuItem key={typeItem.value} value={typeItem.value}>
           {typeItem.text}
         </MenuItem>
       ))}
