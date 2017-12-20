@@ -4,30 +4,18 @@ div.subject-avatar {
   width: 80px;
 }
 
-.subject-title{
+.subject-text {
   overflow: hidden;
   box-sizing: border-box;
+  width: 100%;
+  padding: 0 5px;
 }
 
-.subject-title h3 {
+.subject-text .subject-title {
   font-weight: bold;
-  font-size: 21px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.subject-subtitle {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: block;
-  box-sizing: border-box;
 }
 
 .subject-icon {
-  width:auto;
-  height: auto;
   font-size: 16px;
   vertical-align: middle;
 }

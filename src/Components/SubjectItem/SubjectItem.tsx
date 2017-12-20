@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ListItem, Avatar, Icon, ListItemText } from '../../AppMaterialUI';
+import { ListItem, Avatar, Icon, Typography } from '../../AppMaterialUI';
 
 import './SubjectItem.css';
 
@@ -17,16 +17,15 @@ export type SubjectItemProps = {
 const SubjectItem = ({title, assessmentDate, numOfSeats, image, type, color}: SubjectItemProps) => (
   <ListItem button={true} className="subject-item">
     <Avatar className="subject-avatar" src={process.env.PUBLIC_URL + '/images/' + image + '.jpg'}/>
-    <ListItemText
-      className="subject-title"
-      primary={title}
-      secondary={
-        <span className="subject-subtitle">
-          <Icon className="subject-icon">event</Icon>
-          <span className="subject-date">{assessmentDate.toDateString()}</span>
-        </span>
-      }
-    />
+    <div className="subject-text">
+      <Typography type="title" noWrap={true} className="subject-title">
+          {title}
+      </Typography>
+      <Typography type="subheading" noWrap={true}>
+        <Icon className="subject-icon">event</Icon>
+        <span className="subject-date">{assessmentDate.toDateString()}</span>
+      </Typography>
+    </div>
     <div className="subject-seats">
       <div className="subject-seats-number">{numOfSeats}</div>
       <span>SEATS</span>
