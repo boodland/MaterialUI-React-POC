@@ -9,7 +9,7 @@ const Routes = () => (
   <Switch>
     <Redirect path="/" exact={true} to="/dashboard"/>
     <Route path="/dashboard" component={DashboardListContainer} />
-    <Route path="/subjects" component={SubjectsRoutes} />
+    <SubjectsRoutes />
     <Redirect to="/dashboard"/>
   </Switch>
 );
