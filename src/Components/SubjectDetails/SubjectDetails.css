@@ -8,6 +8,10 @@
   top: 0;
 }
 
+.subject-details-overview {
+  margin-top: 0;
+}
+
 .subject-details-heading {
   flex-basis: 33.33%;
   flex-shrink: 0;

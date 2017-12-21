@@ -8,14 +8,28 @@ import './SubjectDetails.css';
 
 import { SubjectItem } from '../Subjects/SubjectModel';
 
-const SubjectDetails = ({ title, assessmentDate, numOfSeats, image, type, color }: SubjectItem) => (
+export type SubjectDetailsProps = { expanded: string, onPanelChange: Function } & SubjectItem;
+
+enum PanelType {
+  Overview = 'overview',
+  Assessment = 'assessment',
+  Requirements = 'requirements',
+  Syllabus = 'syllabus'
+}
+
+const SubjectDetails = (
+  { title, assessmentDate, numOfSeats, image, type, color, expanded, onPanelChange }: SubjectDetailsProps) => (
   <div className="subject-details-container">
     <Toolbar className="subject-details-toolbar">
       <img src={process.env.PUBLIC_URL + '/images/' + image + '.jpg'}/>
       <Typography className="subject-details-title">{title.toUpperCase()}</Typography>
       <div className="subject-details-type" style={{backgroundColor: color}}>{type}</div>
     </Toolbar>
-    <ExpansionPanel>
+    <ExpansionPanel
+      expanded={expanded === PanelType.Overview}
+      onChange={() => onPanelChange(PanelType.Overview)}
+      className="subject-details-overview"
+    >
       <ExpansionPanelSummary expandIcon={<Icon>info_outline</Icon>}>
         <Typography className="subject-details-heading">Overview</Typography>
         <Typography className="subject-details-secondary-heading" color="secondary">
@@ -32,7 +46,10 @@ const SubjectDetails = ({ title, assessmentDate, numOfSeats, image, type, color 
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
-    <ExpansionPanel>
+    <ExpansionPanel
+      expanded={expanded === PanelType.Assessment}
+      onChange={() => onPanelChange(PanelType.Assessment)}
+    >
       <ExpansionPanelSummary expandIcon={<Icon>event</Icon>}>
         <Typography className="subject-details-heading">Assessment Date</Typography>
         <Typography className="subject-details-secondary-heading" color="secondary">
@@ -49,7 +66,10 @@ const SubjectDetails = ({ title, assessmentDate, numOfSeats, image, type, color 
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
-    <ExpansionPanel>
+    <ExpansionPanel
+      expanded={expanded === PanelType.Requirements}
+      onChange={() => onPanelChange(PanelType.Requirements)}
+    >
       <ExpansionPanelSummary expandIcon={<Icon>report_problem</Icon>}>
         <Typography className="subject-details-heading">Requirements</Typography>
         <Typography className="subject-details-secondary-heading" color="secondary">
@@ -70,7 +90,10 @@ const SubjectDetails = ({ title, assessmentDate, numOfSeats, image, type, color 
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
-    <ExpansionPanel>
+    <ExpansionPanel
+      expanded={expanded === PanelType.Syllabus}
+      onChange={() => onPanelChange(PanelType.Syllabus)}
+    >
       <ExpansionPanelSummary expandIcon={<Icon>library_books</Icon>}>
         <Typography className="subject-details-heading">Syllabus</Typography>
       </ExpansionPanelSummary>

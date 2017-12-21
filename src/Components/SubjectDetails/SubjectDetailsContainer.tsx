@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router';
 
-import SubjectDetails from './SubjectDetails';
+import SubjectDetails, { SubjectDetailsProps } from './SubjectDetails';
 
 import { getSubject } from '../Subjects/SubjectsService';
-
-import { SubjectItem } from '../Subjects/SubjectModel';
 
 type SubjectDetailsContainerProp = {
   subjectId: string;
@@ -27,13 +25,20 @@ class SubjectDetailsContainer extends
   }
 
   handleChangePanel = (state: string) => {
-    this.setState({ expanded: state });
+    this.setState({
+      expanded: this.state.expanded === state ? '' : state
+    });
   }
 
   render() {
-    const subject: SubjectItem = getSubject(this.subjectId);
+    const subject = getSubject(this.subjectId);
+    const subjectDetailsProps: SubjectDetailsProps = {
+      ...subject,
+      expanded: this.state.expanded,
+      onPanelChange: this.handleChangePanel
+    };
     return (
-      <SubjectDetails {...subject}/>
+      <SubjectDetails {...subjectDetailsProps}/>
     );
   }
 }
