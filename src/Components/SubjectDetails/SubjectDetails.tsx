@@ -1,73 +1,94 @@
 import * as React from 'react';
-import { withRouter, RouteComponentProps } from 'react-router';
 
 import {
-  ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, Icon
+  ExpansionPanel, ExpansionPanelSummary, Typography, ExpansionPanelDetails, Icon, Toolbar
 } from '../../AppMaterialUI';
 
 import './SubjectDetails.css';
 
-type SubjectDetailsProp = {
-  subjectId: string;
-};
+import { SubjectItem } from '../Subjects/SubjectModel';
 
-const SubjectDetails = ({ match }: RouteComponentProps<SubjectDetailsProp>) => (
-  <div className="subject-details-panel">
+const SubjectDetails = ({ title, assessmentDate, numOfSeats, image, type, color }: SubjectItem) => (
+  <div className="subject-details-container">
+    <Toolbar className="subject-details-toolbar">
+      <img src={process.env.PUBLIC_URL + '/images/' + image + '.jpg'}/>
+      <Typography className="subject-details-title">{title.toUpperCase()}</Typography>
+      <div className="subject-details-type" style={{backgroundColor: color}}>{type}</div>
+    </Toolbar>
     <ExpansionPanel>
       <ExpansionPanelSummary expandIcon={<Icon>info_outline</Icon>}>
-        <Typography>General settings</Typography>
-        <Typography>I am an expansion panel</Typography>
+        <Typography className="subject-details-heading">Overview</Typography>
+        <Typography className="subject-details-secondary-heading" color="secondary">
+          {numOfSeats} SEATS
+        </Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <Typography>
-          Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
-          maximus est, id dignissim quam.
+          This subject is blah blah blah
+          <br />
+          Blah blah blah...
+          <br />
+          More blah blah blah
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
     <ExpansionPanel>
       <ExpansionPanelSummary expandIcon={<Icon>event</Icon>}>
-        <Typography>Users</Typography>
-        <Typography>
-          You are currently not an owner
+        <Typography className="subject-details-heading">Assessment Date</Typography>
+        <Typography className="subject-details-secondary-heading" color="secondary">
+          {assessmentDate.toLocaleDateString()}
         </Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <Typography>
-          Donec placerat, lectus sed mattis semper, neque lectus feugiat lectus, varius pulvinar
-          diam eros in elit. Pellentesque convallis laoreet laoreet.
+          <label>City:</label>A city in the world
+          <br />
+          <label>Address:</label> Somewhere in the city
+          <br />
+          <label>Time:</label> At a specific time in the address
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
     <ExpansionPanel>
       <ExpansionPanelSummary expandIcon={<Icon>report_problem</Icon>}>
-        <Typography>Advanced settings</Typography>
-        <Typography>
-          Filtering has been entirely disabled for whole web server
+        <Typography className="subject-details-heading">Requirements</Typography>
+        <Typography className="subject-details-secondary-heading" color="secondary">
+          Mandatory to have them
         </Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <Typography>
-          Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-          eros, vitae egestas augue. Duis vel est augue.
+          Requirement 1
+          <br />
+          Requirement 2
+          <br />
+          Requirement 3
+          <br />
+          Requirement 4
+          <br />
+          Requirement 5
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
     <ExpansionPanel>
       <ExpansionPanelSummary expandIcon={<Icon>library_books</Icon>}>
-        <Typography>Advanced settings</Typography>
-        <Typography>
-          Filtering has been entirely disabled for whole web server
-        </Typography>
+        <Typography className="subject-details-heading">Syllabus</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <Typography>
-          Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-          eros, vitae egestas augue. Duis vel est augue.
+          Lesson 1
+          <br />
+          Lesson 2
+          <br />
+          Lesson 3
+          <br />
+          Lesson 4
+          <br />
+          Lesson 5
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
   </div>
 );
 
-export default withRouter(SubjectDetails);
+export default SubjectDetails;

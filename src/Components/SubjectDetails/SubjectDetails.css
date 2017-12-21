@@ -1,4 +1,37 @@
-.subject-details-panel div[role="button"]{
+.subject-details-toolbar {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subject-details-container div[role="button"]{
   transform: none;
   top: 0;
+}
+
+.subject-details-heading {
+  flex-basis: 33.33%;
+  flex-shrink: 0;
+  font-size: 15px;
+}
+
+.subject-details-secondary-heading {
+  font-size: 15px;
+}
+
+img {
+  height: 46px;
+}
+
+.subject-details-title{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.subject-details-type {
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  font-size: 42px;
+  font-weight: bold;
+  width: 48px;
 }
