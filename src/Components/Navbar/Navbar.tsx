@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import NavbarHeaderConnectedWithRouter from '../NavbarHeader/NavbarHeaderConnected';
+import NavbarHeaderConnected from '../NavbarHeader/NavbarHeaderConnected';
 import NavbarListConnected  from '../NavbarList/NavbarListConnected';
 
 const Navbar = () => (
   <React.Fragment>
-    <NavbarHeaderConnectedWithRouter />
+    <NavbarHeaderConnected />
     <NavbarListConnected />
   </React.Fragment>
 );

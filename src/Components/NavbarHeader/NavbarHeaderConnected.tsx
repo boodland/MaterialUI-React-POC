@@ -20,11 +20,9 @@ const mapDispatchToProps = (dispatch: Dispatch<NavbarState>): DispatchToProps =>
   onNavbarGoBack: () => history.back()
 });
 
-const NavbarHeaderConnected = connect<StateToProps, DispatchToProps>(
+const NavbarHeaderConnected = withRouter(connect<StateToProps, DispatchToProps>(
   mapStateToProps,
   mapDispatchToProps
-)(NavbarHeader);
+)(NavbarHeader));
 
-const NavbarHeaderConnectedWithRouter = withRouter(NavbarHeaderConnected);
-
-export default NavbarHeaderConnectedWithRouter;
+export default NavbarHeaderConnected;
