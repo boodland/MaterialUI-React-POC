@@ -4,12 +4,12 @@ import { Route } from 'react-router-dom';
 import { AppLoadable } from '../../AppLoader';
 
 const SubjectsImport = () => import('../Subjects/Subjects');
-const SubjectDetailsImport = () => import('../SubjectDetails/SubjectDetails');
+const SubjectDetailsContainerImport = () => import('../SubjectDetails/SubjectDetailsContainer');
 
 const SubjectsRoutes = ({path}: {path: string}) => (
   <React.Fragment>
     <Route path={path} exact={true} component={AppLoadable(SubjectsImport)} />
-    <Route path={`${path}/:subjectId`} component={AppLoadable(SubjectDetailsImport)} />
+    <Route path={`${path}/:subjectId`} component={AppLoadable(SubjectDetailsContainerImport)} />
   </React.Fragment>
 );
 
