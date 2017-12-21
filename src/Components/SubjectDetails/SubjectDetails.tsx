@@ -10,7 +10,7 @@ import { SubjectItem } from '../Subjects/SubjectModel';
 
 export type SubjectDetailsProps = { expanded: string, onPanelChange: Function } & SubjectItem;
 
-enum PanelType {
+export enum PanelType {
   Overview = 'overview',
   Assessment = 'assessment',
   Requirements = 'requirements',

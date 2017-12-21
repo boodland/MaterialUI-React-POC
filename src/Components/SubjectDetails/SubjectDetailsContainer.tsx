@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router';
 
-import SubjectDetails, { SubjectDetailsProps } from './SubjectDetails';
+import SubjectDetails, { SubjectDetailsProps, PanelType } from './SubjectDetails';
 
 import { getSubject } from '../Subjects/SubjectsService';
 
@@ -20,7 +20,7 @@ class SubjectDetailsContainer extends
 
   constructor(props: RouteComponentProps<SubjectDetailsContainerProp>, state: SubjectDetailsContainerState) {
     super(props);
-    this.state = { expanded: '' };
+    this.state = { expanded: PanelType.Overview };
     this.subjectId = +this.props.match.params.subjectId;
   }
 
