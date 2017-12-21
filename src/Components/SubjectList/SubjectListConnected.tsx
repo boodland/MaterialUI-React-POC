@@ -3,12 +3,12 @@ import { withRouter } from 'react-router-dom';
 
 import { AppState } from '../../AppConfigureStore';
 
-import { SubjectListItemProps } from '../SubjectListItem/SubjectListItem';
+import { SubjectItem } from '../Subjects/SubjectModel';
 import SubjectList, { StateToProps } from './SubjectList';
 
 import { getSubjects } from '../Subjects/SubjectsService';
 
-const filterSubjectBy = (subject: SubjectListItemProps, title: string, typeValue: string): boolean => {
+const filterSubjectBy = (subject: SubjectItem, title: string, typeValue: string): boolean => {
   let isValid = !title || subject.title.toLowerCase().includes(title.toLowerCase());
 
   isValid = isValid &&

@@ -1,24 +1,16 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import { ListItem, Avatar, Icon, Typography } from '../../AppMaterialUI';
 
 import HighlightSearchTermConnected from '../HighlightSearchTerm/HighlightSearchTermConnected';
 
 import './SubjectListItem.css';
-import { Link } from 'react-router-dom';
 
-export type SubjectListItemProps = {
-  subjectId: number;
-  title: string;
-  assessmentDate: Date;
-  numOfSeats: number;
-  type: string;
-  color: string;
-  image: string;
-};
+import { SubjectItem } from '../Subjects/SubjectModel';
 
-const SubjectListItem = (
-  { subjectId, title, assessmentDate, numOfSeats, image, type, color }: SubjectListItemProps) => (
+const SubjectListItem =
+  ({ subjectId, title, assessmentDate, numOfSeats, image, type, color }: SubjectItem) => (
   <Link to={`/subjects/${subjectId}`} style={{ textDecoration: 'none' }} className="subject-item">
     <ListItem button={true}>
       <Avatar className="subject-avatar" src={process.env.PUBLIC_URL + '/images/' + image + '.jpg'}/>

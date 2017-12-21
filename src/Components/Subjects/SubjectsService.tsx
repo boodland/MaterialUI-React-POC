@@ -1,4 +1,6 @@
-const subjects = [
+import { SubjectItem } from './SubjectModel';
+
+const subjects: SubjectItem[] = [
   {
     subjectId: 1, title: 'History', assessmentDate: new Date(2018, 4),
     numOfSeats: 680, type: 'A', color: 'red', image: 'history'
@@ -33,10 +35,10 @@ const subjects = [
   }
 ];
 
-export function getSubjects() {
+export function getSubjects(): SubjectItem[] {
   return subjects;
 }
 
-export function getSubject(subjectId: number) {
-  return subjects.find(subject => subject.subjectId === subjectId);
+export function getSubject(subjectId: number): SubjectItem {
+  return subjects.find(subject => subject.subjectId === subjectId) || subjects[0];
 }
