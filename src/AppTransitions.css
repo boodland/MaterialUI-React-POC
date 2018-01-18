@@ -1,0 +1,52 @@
+.dashboard-enter, .pageToLeft-enter {
+  transform: translateX(100%);
+  position: fixed;
+  width: 100%;
+}
+
+.dashboard-enter.dashboard-enter-active, .pageToLeft-enter.pageToLeft-enter-active {
+  transform: translateX(0);
+  position: fixed;
+  width: 100%;
+  transition: all 500ms;
+}
+
+.dashboard-exit, pageToLeft-exit {
+  transform: translateX(0);
+  position: fixed;
+  width: 100%;
+}
+
+.dashboard-exit.dashboard-exit-active, .pageToLeft-exit.pageToLeft-exit-active {
+  transform: translateX(-100%);
+  position: fixed;
+  width: 100%;
+  transition: all 500ms;
+}
+
+
+.pageToRight-enter {
+  transform: translateX(-100%);
+  position: fixed;
+  width: 100%;
+}
+
+.pageToRight-enter.pageToRight-enter-active {
+  transform: translateX(0);
+  position: fixed;
+  width: 100%;
+  transition: all 500ms;
+}
+
+.pageToRight-exit {
+  transform: translateX(0);
+  position: fixed;
+  width: 100%;
+}
+
+.pageToRight-exit.pageToRight-exit-active {
+  transform: translateX(100%);
+  position: fixed;
+  width: 100%;
+  transition: all 500ms;
+}
