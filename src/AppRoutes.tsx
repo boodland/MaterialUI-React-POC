@@ -5,6 +5,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import DashboardListContainer from './Components/DashboardList/DashboardListContainer';
 
 import SubjectsRoutes from './Components/Subjects/SubjectsRoutes';
+import TutorsRoutes from './Components/Tutors/TutorsRoutes';
 import { ReactElement } from 'react';
 
 const childFactoryCreator = (classNames: string) => (
@@ -30,6 +31,7 @@ const Routes = withRouter((router) => (
         <Switch location={router.location}>
           <Route path="/dashboard" component={DashboardListContainer} />
           <SubjectsRoutes router={router} path="/subjects" />
+          <TutorsRoutes router={router} path="/tutors" />
           <Redirect to="/dashboard"/>
         </Switch>
       </div>
