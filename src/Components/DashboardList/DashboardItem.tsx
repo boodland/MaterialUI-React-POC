@@ -60,7 +60,7 @@ const DashboardItem = (
   );
 
   return (
-    <Card className="flex-item">
+    <Card className="dashboard-flex-item">
       {cardHeader}
       {cardContent}
       {cardFooter}

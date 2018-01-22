@@ -1,8 +1,8 @@
-.flex-container .flex-item {
+.flex-container .dashboard-flex-item {
   margin: 0.4rem 0;
   padding: 0.4rem 0.2rem;
 }
-.flex-item div.card-header{
+.dashboard-flex-item div.card-header{
   padding: 0 8px 16px 8px;
 }
 .card-title {
@@ -57,14 +57,14 @@ div.card-content {
 }
 
 @media (max-width: 411px){
-  .flex-container .flex-item {
+  .flex-container .dashboard-flex-item {
     max-width: 250px;
     min-width: 175px;
   }
 }
 
 @media (min-width: 412px) {
-  .flex-container .flex-item {
+  .flex-container .dashboard-flex-item {
     max-width: 190px;
     min-width: 175px;
   }
