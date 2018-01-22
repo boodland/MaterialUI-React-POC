@@ -1,0 +1,26 @@
+.flex-container {
+  justify-content: center;
+}
+
+.flex-container .tutor-flex-item {
+  width: 100%;
+}
+
+.tutor-flex-item li {
+  justify-content: space-between;
+}
+
+.tutor-text {
+  flex-grow: 1;
+  padding-left: 5px;
+}
+
+.rating-icon {
+  color: goldenrod;
+}
+
+@media (min-width: 851px) {
+  .flex-container .tutor-flex-item {
+    max-width: 420px;
+  }
+}
