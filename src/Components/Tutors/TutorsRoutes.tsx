@@ -5,9 +5,18 @@ import { AppLoadable } from '../../AppLoader';
 
 const TutorsImport = () => import('../TutorList/TutorListContainer');
 
+const TutorListLoadable = AppLoadable(TutorsImport);
+
 const TutorsRoutes = ({router, path}: {router: RouteComponentProps<{location: Location}> , path: string}) => (
   <Switch location={router.location}>
-    <Route path={path} exact={true} component={AppLoadable(TutorsImport)} />
+    <Route
+      path={path}
+      exact={true}
+      render={
+        props =>
+        <TutorListLoadable />
+      }
+    />
   </Switch>
 );
 

@@ -22,24 +22,11 @@ class TutorListContainer extends React.Component<{}, TutorListContainerState> {
     };
   }
 
-  loadTutors(tutors: TutorItem[]) {
-    setTimeout(
-      () => {
-        if (this.unmounted) { return; }
-        this.setState({tutors});
-      },
-      250);
-  }
-
   componentDidMount() {
     getTutorsAsync()
       .then((tutors) => {
-        this.loadTutors(tutors);
+        this.setState({tutors});
       });
-  }
-
-  componentWillUnmount() {
-    this.unmounted = true;
   }
 
   render() {
