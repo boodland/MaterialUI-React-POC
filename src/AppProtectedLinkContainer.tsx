@@ -7,7 +7,7 @@ import {
 
 type AppProtectedLinkContainerProps = {
   children: React.ReactNode,
-  message: string,
+  message?: string,
   to: string
   className?: string
   protected?: boolean
