@@ -13,8 +13,6 @@ type TutorListContainerState = {
 
 class TutorListContainer extends React.Component<{}, TutorListContainerState> {
 
-  unmounted: boolean;
-
   constructor(props: {}, state: TutorListContainerState) {
     super(props);
     this.state = {
@@ -42,6 +40,7 @@ class TutorListContainer extends React.Component<{}, TutorListContainerState> {
       <List className="flex-container">
         {tutorList}
       </List>
+
     );
   }
 }
