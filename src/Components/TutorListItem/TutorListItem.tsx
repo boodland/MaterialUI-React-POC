@@ -23,6 +23,7 @@ const TutorListItem =
     to={`/tutors/${tutorId}`}
     message="navigate to tutor details"
     className="tutor-flex-item"
+    protected={true}
   >
     <ListItem button={true}>
       <Avatar src={thumbnail}/>
@@ -34,7 +35,11 @@ const TutorListItem =
           {getRatingStars(rating)}
         </Typography>
       </div>
-      <AppProtectedLinkContainer message="contact the tutor" to={`/tutors/${tutorId}/contact`}>
+      <AppProtectedLinkContainer
+        message="contact the tutor"
+        to={`/tutors/${tutorId}/contact`}
+        protected={true}
+      >
         <Button raised={true} color={'accent'} >
           Contact
         </Button>
