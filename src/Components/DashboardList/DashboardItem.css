@@ -36,7 +36,7 @@ div.card-content {
   padding: 0px;
 }
 
-.card-content div {
+.card-content div.card-content-seats {
   margin: 0 0.3rem;
   width: 100%;
   text-align: center;

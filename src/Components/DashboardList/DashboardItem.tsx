@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Card, CardHeader, Icon, CardContent, Button, Chip } from '../../AppMaterialUI';
 
 import './DashboardItem.css';
-import { Link } from 'react-router-dom';
+
+import AppProtectedLinkContainer from '../../AppProtectedLinkContainer';
 
 export type DashboardItemProps = {
   subjectId: number;
@@ -39,23 +40,29 @@ const DashboardItem = (
       className="card-content"
       style={{ backgroundImage: 'url(' + process.env.PUBLIC_URL + '/images/' + image + '.jpg)' }}
     >
-      <div>{numOfSeats} Seats</div>
-      <Link to={`/subjects/${subjectId}`} style={{ textDecoration: 'none' }}>
+      <div className="card-content-seats">{numOfSeats} Seats</div>
+      <AppProtectedLinkContainer to={`/subjects/${subjectId}`}>
         <Button raised={true} color="default">View Subject</Button>
-      </Link>
+      </AppProtectedLinkContainer>
     </CardContent>
   );
 
   const cardFooter = (
     <div className="flex-container">
-      <Chip
-        className="chip-exams"
-        label={numOfExams + ' Exams'}
-      />
-      <Chip
-        className="chip-tutors"
-        label={numOfTutors + ' Tutors'}
-      />
+      <AppProtectedLinkContainer
+        to={`/subjects/${subjectId}/exams`}
+        protected={true}
+        message="to navigate to subject's exams"
+      >
+        <Chip className="chip-exams" label={numOfExams + ' Exams'}/>
+      </AppProtectedLinkContainer>
+      <AppProtectedLinkContainer
+        to={`/subjects/${subjectId}/tutors`}
+        protected={true}
+        message="to navigate to subject's tutors"
+      >
+        <Chip className="chip-tutors" label={numOfTutors + ' Tutors'}/>
+      </AppProtectedLinkContainer>
     </div>
   );
 
