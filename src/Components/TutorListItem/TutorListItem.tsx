@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 
 import { ListItem, Avatar, Typography, Button, Icon } from '../../AppMaterialUI';
+
+import AppProtectedLinkContainer from '../../AppProtectedLinkContainer';
 
 import { TutorItem } from '../Tutors/TutorModel';
 
@@ -18,7 +19,11 @@ function getRatingStars(rating: number) {
 
 const TutorListItem =
   ({tutorId, fullName, thumbnail, rating}: {tutorId: number} & TutorItem) => (
-  <Link to={`/tutors/${tutorId}`} style={{ textDecoration: 'none' }} className="tutor-flex-item">
+  <AppProtectedLinkContainer
+    to={`/tutors/${tutorId}`}
+    message="navigate to tutor details"
+    className="tutor-flex-item"
+  >
     <ListItem button={true}>
       <Avatar src={thumbnail}/>
       <div className="tutor-text">
@@ -29,11 +34,13 @@ const TutorListItem =
           {getRatingStars(rating)}
         </Typography>
       </div>
-      <Button raised={true} color={'accent'} >
-        Contact
-      </Button>
+      <AppProtectedLinkContainer message="contact the tutor" to={`/tutors/${tutorId}/contact`}>
+        <Button raised={true} color={'accent'} >
+          Contact
+        </Button>
+      </AppProtectedLinkContainer>
     </ListItem>
-  </Link>
+  </AppProtectedLinkContainer>
 );
 
 export default TutorListItem;
