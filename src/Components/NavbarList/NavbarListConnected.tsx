@@ -12,7 +12,7 @@ const mapStateToProps = ({navbarReducer}: AppState): StateToProps => ({
     { title: 'Dashboard', link: '/dashboard', icon: 'apps' },
     { title: 'Subjects', link: '/subjects', icon: 'school' },
     { title: 'Tutors', link: '/tutors', icon: 'person' },
-    { title: 'Exams', link: '/exams', icon: 'edit' }
+    { title: 'Exams', link: '/exams', icon: 'edit', protected: true, message: 'exam list' }
   ],
   open: navbarReducer.open
 });

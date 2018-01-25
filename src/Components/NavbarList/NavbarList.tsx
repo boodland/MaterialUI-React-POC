@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Drawer, List, ListItem, ListItemIcon, ListItemText, Icon } from '../../AppMaterialUI';
-import { Link } from 'react-router-dom';
+
+import AppProtectedLinkContainer from '../../AppProtectedLinkContainer';
 
 export type StateToProps = {
-  options: { title: string, link: string, icon: string }[];
+  options: { title: string, link: string, icon: string, protected?: boolean, message?: string }[];
   open: boolean;
 };
 
@@ -12,15 +13,21 @@ export type DispatchToProps = {
 };
 
 const NavbarList = ({ options, open, onNavbarClose }: StateToProps & DispatchToProps) => {
+
   const listActions = options.map((option, id) => (
-    <Link key={id} to={option.link} style={{ textDecoration: 'none' }}>
+    <AppProtectedLinkContainer
+      key={id}
+      to={option.link}
+      message={`to navigate to ${option.message}`}
+      protected={option.protected}
+    >
       <ListItem button={true}>
         <ListItemIcon>
           <Icon>{option.icon}</Icon>
         </ListItemIcon>
         <ListItemText primary={option.title} />
       </ListItem>
-    </Link>
+    </AppProtectedLinkContainer>
     )
   );
   return (
