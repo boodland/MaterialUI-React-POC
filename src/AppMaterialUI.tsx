@@ -15,6 +15,7 @@ import MenuItem from 'material-ui/Menu/MenuItem';
 import Input, { InputLabel, InputAdornment } from 'material-ui/Input';
 import { FormControl } from 'material-ui/Form';
 import ExpansionPanel, { ExpansionPanelDetails, ExpansionPanelSummary } from 'material-ui/ExpansionPanel';
+import Dialog, { DialogActions, DialogContent, DialogContentText, DialogTitle } from 'material-ui/Dialog';
 
 export {
   AppBar,
@@ -33,5 +34,6 @@ export {
   MenuItem,
   Input, InputLabel, InputAdornment,
   FormControl,
-  ExpansionPanel, ExpansionPanelDetails, ExpansionPanelSummary
+  ExpansionPanel, ExpansionPanelDetails, ExpansionPanelSummary,
+  Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle
 };
