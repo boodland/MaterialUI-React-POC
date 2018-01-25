@@ -10,6 +10,7 @@ type AppProtectedLinkContainerProps = {
   message: string,
   to: string
   className?: string
+  protected?: boolean
 };
 
 type AppProtectedLinkContainerState = {
@@ -18,8 +19,6 @@ type AppProtectedLinkContainerState = {
 
 class AppProtectedLinkContainer extends
   React.Component<AppProtectedLinkContainerProps, AppProtectedLinkContainerState> {
-
-  private authorized = false;
 
   handleClickPropagation = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
@@ -40,7 +39,7 @@ class AppProtectedLinkContainer extends
   render() {
 
     const NoAuthorizedDialog = () => (
-      <React.Fragment>
+      <div onClick={this.handleClickPropagation}>
         <div onClick={this.handleClickOpen}>
           {this.props.children}
         </div>
@@ -64,19 +63,17 @@ class AppProtectedLinkContainer extends
             </Button>
           </DialogActions>
         </Dialog>
-      </React.Fragment>
+      </div>
     );
 
     return (
-      <div className={this.props.className} onClick={this.handleClickPropagation}>
+      <div className={this.props.className}>
         {
-          this.authorized ?
-            (
-              <Link to={this.props.to} style={{ textDecoration: 'none' }}>
-                {this.props.children}
-              </Link>
-            ) :
-            <NoAuthorizedDialog />
+          this.props.protected ?
+            <NoAuthorizedDialog /> :
+            <Link to={this.props.to} style={{ textDecoration: 'none' }}>
+              {this.props.children}
+            </Link>
         }
       </div>
     );
